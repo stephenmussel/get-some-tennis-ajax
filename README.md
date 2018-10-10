@@ -1,4 +1,4 @@
-# Get Jazzy AJAX Get
+# Get Jazzy AJAX
 
 - Fork
 - Clone
