@@ -17,6 +17,7 @@ In the comments on the submission write down what you think is happening:
 
 ## Stretch
 
+- Our `.then` is getting cluttered. Let's move the appending looping code into their own functions
 - The `server.js` file is getting a little crowded. Move arrays into a `modules` folder inside of your `server` folder (names like `artist.js` and `song.js` would be good).
 - Add a new POST route and form to add an artist. 
 - The `/artist` and `/song` requests are working! Add a third table for albums that has `title` and `year` for the release date.
