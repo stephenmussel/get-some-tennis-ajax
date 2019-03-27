@@ -4,10 +4,13 @@
 - Clone
 - `npm install` to get all of the dependencies (just `express` for now)
 
+Install [Postman](https://www.getpostman.com/downloads/), if you haven't already.
+
+
 ## Base
 
-- Look at the pattern for the working `/artist` AJAX request. The client side is all set up for `/song`, but the server side code isn't there. Add the server side code.
-- Add a POST route to the server.js file to allow a new song to be added. 
+- Look at the pattern for the working `/artist` AJAX request. The client side is all set up for `/song`, but the server side code isn't there. Add the server side code. Test with Postman!
+- Add a POST route to the server.js file to allow a new song to be added. Test with Postman!
 - Add a form to the `index.html` & update `client.js` to do an Ajax POST request, allowing a new song to be added.
 
 In the comments on the submission write down what you think is happening:
