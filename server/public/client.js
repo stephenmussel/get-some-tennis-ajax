@@ -2,24 +2,24 @@ $(document).ready(onReady);
 
 function onReady() {
     // load data from the server, put it on the DOM
-    getArtistData();
-    getSongData();    
+    getPlayerData();
+    getTournamentData();    
 }
 
 // get artist data from the server
-function getArtistData() {
+function getPlayerData() {
     $.ajax({
         type: 'GET',
-        url: '/artist'
+        url: '/players'
     }).then(function (response) {
         // append data to the DOM
         for (let i = 0; i < response.length; i++) {
-            let artist = response[i];
-            $('#artistTableBody').append(`
+            let player = response[i];
+            $('#playerTableBody').append(`
                 <tr>
-                    <td>${artist.name}</td>
-                    <td>${artist.born}</td>
-                    <td>${artist.died}</td>
+                    <td>${player.firstName}</td>
+                    <td>${player.lastName}</td>
+                    <td>${player.born}</td>
                 </tr>
             `);
         }
@@ -27,18 +27,18 @@ function getArtistData() {
 }
 
 // get song data from the server
-function getSongData() {
+function getTournamentData() {
     $.ajax({
         type: 'GET',
-        url: '/song'
+        url: '/tournaments'
     }).then(function (response) {
         // append data to the DOM
         for (let i = 0; i < response.length; i++) {
-            let song = response[i];
-            $('#songTableBody').append(`
+            let tournament = response[i];
+            $('#tournamentTableBody').append(`
                 <tr>
-                    <td>${song.title}</td>
-                    <td>${song.artist}</td>
+                    <td>${tournament.name}</td>
+                    <td>${tournament.location}</td>
                 </tr>
             `);
         }

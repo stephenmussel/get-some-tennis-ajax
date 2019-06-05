@@ -3,52 +3,62 @@ const express = require('express');
 const app = express();
 const PORT = 5000;
 
-const artistListArray = [
+const tennisPlayersArrray = [
     {
-        name: 'Miles Davis',
-        born: 1926,
-        died: 1990,
+        firstName: 'Serena',
+        lastName: 'Williams',
+        born: 1981,
     },
     {
-        name: 'Duke Ellington',
-        born: 1899,
-        died: 1974,
+        firstName: 'Arthur',
+        lastName: 'Ashe',
+        born: 1943,
     },
     {
-        name: 'John Coltrane',
-        born: 1926,
-        died: 1987,
+        firstName: 'John',
+        lastName: 'McEnroe',
+        born: 1959,
     },
     {
-        name: 'Louis Daniel Armstrong',
-        born: 1901,
-        died: 1971,
+        firstName: 'Naomi',
+        lastName: 'Osaka',
+        born: 1997,
+    },
+    {
+        firstName: 'Andre',
+        lastName: 'Agassi',
+        born: 1970,
+    },
+    {
+        firstName: 'Bille Jean',
+        lastName: 'King',
+        born: 1943,
     },
 ];
 
-const songListArray = [
+const tournamentsArray = [
     {
-        title: 'Take Five',
-        artist: 'The Dave Brubeck Quartet',
+        name: 'Australian Open',
+        location: 'Melbourne, Australia',
     },
     {
-        title: 'So What',
-        artist: 'Miles Davis',
+        name: 'French Open',
+        location: 'Paris, France',
     },
     {
-        title: 'Sing Sing Sing',
-        artist: 'Benny Goodman',
+        name: 'Wimbledon',
+        location: 'Wimbledon, England',
     },
     {
-        title: 'Take the "A" Train',
-        artist: 'The Dave Brubeck Quartet',
+        name: 'US Open',
+        location: 'NYC, New York',
     },
 ];
 
 app.use(express.static('server/public'));
 
-app.get('/artist', (req, res) => {
-    res.send(artistListArray);
+app.get('/players', (req, res) => {
+    res.send(tennisPlayersArrray);
 });
 
 app.listen(PORT, () => {
