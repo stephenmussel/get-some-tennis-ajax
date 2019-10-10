@@ -6,7 +6,7 @@ function onReady() {
     getTournamentData();    
 }
 
-// get artist data from the server
+// get player data from the server
 function getPlayerData() {
     $.ajax({
         type: 'GET',
@@ -26,7 +26,7 @@ function getPlayerData() {
     });
 }
 
-// get song data from the server
+// get tournament data from the server
 function getTournamentData() {
     $.ajax({
         type: 'GET',

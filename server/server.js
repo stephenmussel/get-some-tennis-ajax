@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const PORT = 5000;
 
-const tennisPlayersArrray = [
+const tennisPlayersArray = [
     {
         firstName: 'Serena',
         lastName: 'Williams',
@@ -58,7 +58,7 @@ const tournamentsArray = [
 app.use(express.static('server/public'));
 
 app.get('/players', (req, res) => {
-    res.send(tennisPlayersArrray);
+    res.send(tennisPlayersArray);
 });
 
 app.listen(PORT, () => {
