@@ -55,10 +55,21 @@ const tournamentsArray = [
     },
 ];
 
+// app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: true}));
 app.use(express.static('server/public'));
 
 app.get('/players', (req, res) => {
     res.send(tennisPlayersArray);
+});
+
+app.get('/tournaments', (req, res) => {
+    res.send(tournamentsArray);
+});
+
+app.post('/players', (req, res) => {
+    tennisPlayersArray.push(req.body);
+    res.send('Player Added');
 });
 
 app.listen(PORT, () => {

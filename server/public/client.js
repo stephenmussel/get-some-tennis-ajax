@@ -2,8 +2,9 @@ $(document).ready(onReady);
 
 function onReady() {
     // load data from the server, put it on the DOM
+    getTournamentData();
+    $('#add-button').on('click', postPlayerData);
     getPlayerData();
-    getTournamentData();    
 }
 
 // get player data from the server
@@ -24,6 +25,30 @@ function getPlayerData() {
             `);
         }
     });
+}
+
+function postPlayerData() {
+    $.ajax({
+        method: 'POST',
+        url: '/players',
+        data: {
+            firstName: $('#firstName').val(),
+            lastName: $('#lastName').val(),
+            born: $('#born').val(),
+        },
+    }).then(handlePostSuccess).catch(postError);
+}
+
+function handlePostSuccess() {
+    // $('input').val('');
+    // console.log($('#playerTableData').val());
+    $('#playerTableData').val('');
+    getPlayerData();
+}
+
+function postError() {
+    alert('oops!!!');
+    
 }
 
 // get tournament data from the server
