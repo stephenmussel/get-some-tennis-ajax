@@ -2,7 +2,7 @@ const express = require('express');
 // fix  is this right?
 const tennisPlayersArray = require('./modules/players');
 const tournamentsArray = require('./modules/tournaments');
-
+const winnersArray = require('./modules/winners');
 
 const app = express();
 const PORT = 5000;
