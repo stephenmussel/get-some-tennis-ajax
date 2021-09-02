@@ -6,7 +6,6 @@
 
 Install [Postman](https://www.getpostman.com/downloads/), if you haven't already.
 
-
 ## Base
 
 - Look at the pattern for the working `/players` AJAX request. The client side is all set up for `/tournaments`, but the server side code isn't there. Add the server side code. Test with Postman!

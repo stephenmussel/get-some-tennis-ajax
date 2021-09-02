@@ -8,25 +8,47 @@ function onReady() {
 }
 
 // get player data from the server
+// function getPlayerData() {
+//     $.ajax({
+//         type: 'GET',
+//         url: '/players'
+//     }).then(function (response) {
+//         // empties table so it doesn't display it with the new inputs
+//         $('#playerTableBody').empty();
+//         // append data to the DOM
+//         for (let i = 0; i < response.length; i++) {
+//             let player = response[i];
+//             $('#playerTableBody').append(`
+//                 <tr>
+//                     <td>${player.firstName}</td>
+//                     <td>${player.lastName}</td>
+//                     <td>${player.born}</td>
+//                 </tr>
+//             `);
+//         }
+//     });
+// }
+
 function getPlayerData() {
     $.ajax({
         type: 'GET',
         url: '/players'
-    }).then(function (response) {
-        // empties table so it doesn't display it with the new inputs
-        $('#playerTableBody').empty();
-        // append data to the DOM
-        for (let i = 0; i < response.length; i++) {
-            let player = response[i];
-            $('#playerTableBody').append(`
-                <tr>
-                    <td>${player.firstName}</td>
-                    <td>${player.lastName}</td>
-                    <td>${player.born}</td>
-                </tr>
-            `);
-        }
-    });
+    }).then(appendPlayerData);
+}
+
+function appendPlayerData(response) {
+    $('#playerTableBody').empty();
+    // append data to the DOM
+    for (let i = 0; i < response.length; i++) {
+        let player = response[i];
+        $('#playerTableBody').append(`
+            <tr>
+                <td>${player.firstName}</td>
+                <td>${player.lastName}</td>
+                <td>${player.born}</td>
+            </tr>
+        `);
+    }
 }
 
 function postPlayerData() {
@@ -57,7 +79,10 @@ function getTournamentData() {
     $.ajax({
         type: 'GET',
         url: '/tournaments'
-    }).then(function (response) {
+    }).then(appendTournamentData); 
+}
+
+function appendTournamentData(response) {
         // append data to the DOM
         for (let i = 0; i < response.length; i++) {
             let tournament = response[i];
@@ -68,5 +93,4 @@ function getTournamentData() {
                 </tr>
             `);
         }
-    });
-}
+    }

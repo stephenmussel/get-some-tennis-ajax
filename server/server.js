@@ -68,7 +68,9 @@ app.get('/tournaments', (req, res) => {
 });
 
 app.post('/players', (req, res) => {
-    tennisPlayersArray.push(req.body);
+    // tennisPlayersArray.push(req.body);
+    const playerToAdd = req.body;
+    tennisPlayersArray.push(playerToAdd);
     res.send('Player Added');
 });
 
