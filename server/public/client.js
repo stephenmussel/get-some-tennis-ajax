@@ -13,6 +13,8 @@ function getPlayerData() {
         type: 'GET',
         url: '/players'
     }).then(function (response) {
+        // empties table so it doesn't display it with the new inputs
+        $('#playerTableBody').empty();
         // append data to the DOM
         for (let i = 0; i < response.length; i++) {
             let player = response[i];
@@ -40,9 +42,8 @@ function postPlayerData() {
 }
 
 function handlePostSuccess() {
-    // $('input').val('');
-    // console.log($('#playerTableData').val());
-    $('#playerTableData').val('');
+    // clear inputs
+    $('input').val('');
     getPlayerData();
 }
 
