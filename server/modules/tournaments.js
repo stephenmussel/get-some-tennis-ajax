@@ -16,3 +16,5 @@ const tournamentsArray = [
         location: 'NYC, New York',
     },
 ];
+
+module.exports = tournamentsArray;

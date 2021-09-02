@@ -30,3 +30,5 @@ const tennisPlayersArray = [
         born: 1943,
     },
 ];
+
+module.exports = tennisPlayersArray;
