@@ -6,6 +6,13 @@
 
 Install [Postman](https://www.getpostman.com/downloads/), if you haven't already.
 
+## Checklist
+
+- [] server-side validation: if player being added to `/winner` array is not in our 
+    `/players` array, the server should return a `400` error.
+- [] display most recent winner
+- [] track total wins
+
 ## Base
 
 - Look at the pattern for the working `/players` AJAX request. The client side is all set up for `/tournaments`, but the server side code isn't there. Add the server side code. Test with Postman!
