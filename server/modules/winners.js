@@ -1,9 +1,7 @@
 const winnersArray = [
-    {
-        firstName: firstName,
-        lastName: lastName,
-        tournamentName: tournamentName,
-    },
+    firstName: '',
+    lastName:   '',
+    tournamentName: '',
 ];
 
 module.exports = winnersArray;

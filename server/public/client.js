@@ -51,6 +51,20 @@ function appendPlayerData(response) {
     }
 }
 
+// TODO finish this
+function getWinnerData() {
+    $.ajax({
+        type: 'GET',
+        url: '/winners',
+    }).then(handleWinnerSuccess);
+}
+
+// TODO finish this
+function handleWinnerSuccess() {
+    console.log('in handleWinnerSuccess');
+    
+}
+
 function postPlayerData() {
     $.ajax({
         method: 'POST',
